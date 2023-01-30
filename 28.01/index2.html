@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="content">
+        <strong class="title"></strong>
+        <p class="discription"></p>
+        <img src="" alt="kaput" class="img">
+        <p class="data"></p>
+
+    </div>
+    <script>
+        // робимо змінну посилання
+        const url = 'https://api.nasa.gov/planetary/apod?api_key=yDwcj9G9ETVcDmJE3RXDPZzEShPlzqdCHh269Shi';
+        const title = document.querySelector('.title')
+        const description = document.querySelector('.discription')
+        const image = document.querySelector('.img')
+        const data1 = document.querySelector('.data')
+        // отримуємо дані з посилання в data
+        const data = fetch(url)
+        // чекаємо поки підгрузяться дані
+        .then( (response) => response.json() ) 
+        // виводимо результат на сайт
+        .then( (data) => {
+            console.log(data)
+            title.innerHTML = data.title
+            description.innerHTML = data.explanation
+            image.src = data.url
+            data1.innerHTML = data.date
+
+        } )
+    </script>
+</body>
+</html>

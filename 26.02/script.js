@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", (event) =>{
 
 })
 document.addEventListener("submit", (event) =>{
-    createValue
+    createValue;
     window.localStorage.clear();
     username.value = "";
     email.value = "";

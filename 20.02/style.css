@@ -22,4 +22,11 @@ body{
     padding: 10px;
     text-align: center;
     display: flex;
+    
+}
+.green-text{
+    color: green;
+}
+.black-text{
+    color: rgb(53, 53, 53);
 }
